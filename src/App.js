@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import HomePage from "./pages/HomePage/HomePage";
+import { Routes, Route } from 'react-router-dom';
+import Header from "./components/Header/Header";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/create" element={<CreatePost />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} /> 
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+// компонент App
+// компонент - это функция. JSX - html + js
+// React Fragment - родительский элемент <> </>
