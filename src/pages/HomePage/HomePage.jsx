@@ -46,6 +46,7 @@ const HomePage = () => {
           return (
             <CourseItem
               key={course.id}
+              id={course.id}
               name={course.name}
               duration={course.duration}
               status={course.important}

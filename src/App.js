@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import SinglePostPage from "./pages/SinglePostPage/SinglePostPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/create" element={<CreatePost />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/post/:id" element={<SinglePostPage />} />
       </Routes>
     </div>
   );

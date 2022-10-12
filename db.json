@@ -4,7 +4,8 @@
       "id": 1,
       "name": "HTML",
       "duration": "1",
-      "important": false
+      "important": false,
+      "additional_info" : "HTML - это" 
     },
     {
       "id": 2,
