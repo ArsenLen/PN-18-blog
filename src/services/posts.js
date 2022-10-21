@@ -1,5 +1,5 @@
 import axios from 'axios'
-const URL = 'http://localhost:3001/posts'
+const URL = 'http://localhost:3001/posts/'
  
 const getPosts = (number) => {
     return axios.get(URL)
@@ -13,4 +13,8 @@ const editPost = (changedPost, id) => {
     return axios.put(`${URL}/${id}`, changedPost)
 }
 
-export default { getPosts, createPost, editPost  }
+const getPost = (id) => {
+    return axios.get(`http://localhost:3001/posts/${id}`)
+}
+
+export default { getPosts, createPost, editPost, getPost  }

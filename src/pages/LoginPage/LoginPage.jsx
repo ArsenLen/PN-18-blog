@@ -19,7 +19,6 @@ const LoginPage = () => {
         .post('http://localhost:3001/login', user)
         .then(res => {
           setLogin(res.data.user.login)
-          setNumber(res.data.user.number)
         })
         .catch(err => console.log(err.data))
   }
