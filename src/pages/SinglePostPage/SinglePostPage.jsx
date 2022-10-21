@@ -59,9 +59,9 @@ const SinglePostPage = () => {
 
     const changePost = (e) => {
         axios.put(`http://localhost:3001/posts/${id}`, {
-            newName,
-            newDuration,
-
+            name : newName,
+            duration : newDuration,
+            important : newImportance
         })
     }
 

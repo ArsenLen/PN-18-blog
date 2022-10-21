@@ -1,11 +1,10 @@
 {
   "posts": [
     {
-      "id": 1,
-      "name": "HTML",
+      "name": "HTML5",
       "duration": "1",
-      "important": false,
-      "additional_info" : "HTML - это" 
+      "important": true,
+      "id": 1
     },
     {
       "id": 2,
