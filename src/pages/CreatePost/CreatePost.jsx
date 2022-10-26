@@ -22,6 +22,7 @@ const CreatePost = () => {
       name,
       duration,
       important: Math.random() > 0.5, //  n > n1 - true, false; {0 : 1}
+      created_at : new Date()
     };
     postService
       .createPost(newPost)

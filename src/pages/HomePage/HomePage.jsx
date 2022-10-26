@@ -50,6 +50,7 @@ const HomePage = () => {
               name={course.name}
               duration={course.duration}
               status={course.important}
+              created_at={course.created_at}
               changeImportance={() => changeImportance(course.id)}
               deletePost={() => deletePost(course.id)}
             />

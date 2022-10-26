@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "name": "HTML5",
-      "duration": "1",
-      "important": true,
+      "name": "HTML",
+      "duration": "2",
+      "important": false,
       "id": 1
     },
     {
@@ -31,10 +31,18 @@
       "id": 5
     },
     {
-      "name": "HelloWorld",
-      "duration": "1",
+      "name": "Hello",
+      "duration": "2",
       "important": false,
+      "created_at": 1666359051716,
       "id": 6
+    },
+    {
+      "name": "Hello",
+      "duration": "2",
+      "important": true,
+      "created_at": "2022-10-21T13:42:00.109Z",
+      "id": 7
     }
   ],
   "users": [
@@ -53,6 +61,13 @@
       "password": "$2a$10$6kQOWHUAF0T/FVR0WBJnHuR05BICUvO.46qUK4pY80ghip4ln11Le",
       "login": "Arsen",
       "id": 3
+    },
+    {
+      "email": "test3@mail.ru",
+      "password": "$2a$10$BP06h/8cTwiFhhW8y4T4mOTJB//I2my.vVlxmqG.1brcAXn0iUUrO",
+      "login": "Admin",
+      "id": 4,
+      "role" : "admin"
     }
   ]
 }

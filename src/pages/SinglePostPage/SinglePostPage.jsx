@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, Navigate } from 'react-router-dom';
 import styled from 'styled-components'
 import styles from './singlepost.module.css'
 import postService from '../../services/posts';
@@ -55,14 +55,26 @@ const SinglePostPage = () => {
         setEditMode(true)
         setNewName(post.name)
         setNewDuration(post.duration)
+        setNewImportance(post.important)
     }
 
     const changePost = (e) => {
-        axios.put(`http://localhost:3001/posts/${id}`, {
+        axios.patch(`http://localhost:3001/posts/${id}`, {
             name : newName,
             duration : newDuration,
             important : newImportance
+        }).then(res => {
+            setEditMode(false)
+            setPost(res.data)
         })
+    }
+
+    const deletePost = () => {
+        axios
+            .delete(`http://localhost:3001/posts/${id}`)
+            .then(res => {
+                window.location.href = "/"
+            })
     }
 
     return (
@@ -85,7 +97,7 @@ const SinglePostPage = () => {
                     <SinglePostTitle>{post.name}</SinglePostTitle>
                     <div className='button-wrapper'>
                         <Button variant="contained" color="success" onClick={handleEditMode}>Редактировать</Button>
-                        <Button variant="contained" color="error">Удалить</Button>
+                        <Button variant="contained" color="error" onClick={deletePost}>Удалить</Button>
                     </div>
                     </>
                 ) }
@@ -101,7 +113,7 @@ const SinglePostPage = () => {
                             value={newDuration}
                             onChange={e => setNewDuration(e.target.value)}
                         />
-                        { post.important ? (
+                        { newImportance ? (
                             <Button variant="outlined" color="error" onClick={() => setNewImportance(false)}>Сделать не важным</Button>
                         ) : (
                             <Button variant="outlined" color="success" onClick={() => setNewImportance(true)}>Сделать важным</Button>
