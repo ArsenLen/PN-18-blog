@@ -11,7 +11,9 @@ const HomePage = () => {
   useEffect(() => {
     postService
       .getPosts()
-        .then(res => setPosts(res.data))
+        .then(res => {
+          setPosts(res.data)
+        })
   }, [])
   
   const filteredPosts = showAll ? posts : posts.filter(post => post.important === true) 

@@ -7,6 +7,7 @@ import CreatePost from "./pages/CreatePost/CreatePost";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SinglePostPage from "./pages/SinglePostPage/SinglePostPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} /> 
         <Route path="/post/:id" element={<SinglePostPage />} />
+        <Route path="/profile/" element={<ProfilePage />} />
       </Routes>
     </div>
   );

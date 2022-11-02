@@ -10,9 +10,12 @@ const userSlice = createSlice({
         loginSuccess: (state, action) => {
             state.currentUser = action.payload // меняем старый стейт на новые данные из экшна
         },
-        loginFailure: (state) => {} 
+        loginFailure: (state) => {},
+        logout : (state) => {
+            state.currentUser = null   
+        }
     }
 })
 
 export default userSlice.reducer
-export const { loginStart, loginSuccess, loginFailure } = userSlice.actions
+export const { loginStart, loginSuccess, loginFailure, logout } = userSlice.actions

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
@@ -6,11 +6,23 @@ import IconButton from "@mui/material/IconButton";
 import postService from "../../services/posts";
 import TextField from "@mui/material/TextField";
 import './createpost.css'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from "react-redux";
 
 const CreatePost = () => {
   const [name, setName] = useState("");
   const [duration, setDuration] = useState('');
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
+
+  const user = useSelector(state => state.user.currentUser)
+
+  useEffect(() => {
+    if(!user) {
+      navigate("/login")
+    }
+  }, [user])
+  
 
   const handleClose = () => {
     setOpen(false);
